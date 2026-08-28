@@ -30,6 +30,12 @@ containers. Please update this file when adding a new environment variable.
     secretKeyRef:
       name: {{ .Release.Name }}-yeti-secret 
       key: yeti-arangodb
+{{- if .Values.chromadb.enabled }}
+- name: YETI_CHROMA_HOST
+  value: "{{ .Release.Name }}-yeti-chromadb"
+- name: YETI_CHROMA_PORT
+  value: "8000"
+{{- end }}
 - name: YETI_AUTH_SECRET_KEY
   valueFrom:
     secretKeyRef:

@@ -311,3 +311,45 @@ arangodb:
   ## @param arangodb.nodeSelector Node labels for Yeti arangodb pods assignment
   ##
   nodeSelector: {}
+## @section ChromaDB configuration
+##
+chromadb:
+  ## @param chromadb.enabled Whether to enable ChromaDB microservice
+  ##
+  enabled: true
+  image:
+    ## @param chromadb.image.repository ChromaDB image repository
+    ##
+    repository: chromadb/chroma
+    ## @param chromadb.image.pullPolicy ChromaDB image pull policy
+    ##
+    pullPolicy: IfNotPresent
+    ## @param chromadb.image.tag ChromaDB image tag
+    ##
+    tag: "1.5.7"
+  ## ChromaDB persistence configuration
+  ##
+  persistence:
+    ## @param chromadb.persistence.enabled Whether to enable persistence for ChromaDB
+    ##
+    enabled: true
+    ## @param chromadb.persistence.size ChromaDB Persistent Volume size
+    ##
+    size: 2Gi
+  ## ChromaDB resource requests and limits
+  ## @param chromadb.resources.limits The resources limits for the ChromaDB container
+  ## @param chromadb.resources.requests The requested resources for the ChromaDB container
+  resources:
+    ## Example:
+    ## limits:
+    ##    cpu: 500m
+    ##    memory: 1Gi
+    limits: {}
+    ## Example:
+    ## requests:
+    ##    cpu: 500m
+    ##    memory: 1Gi
+    requests: {}
+  ## @param chromadb.nodeSelector Node labels for ChromaDB pods assignment
+  ##
+  nodeSelector: {}

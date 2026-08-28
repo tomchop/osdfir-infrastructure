@@ -1,5 +1,5 @@
 {{/*
-Init Container for checking for the Redis and ArangoDB service prior to starting
+Init Container for checking for the Redis, ArangoDB and ChromaDB services prior to starting
 the Yeti Pods.
 */}}
 {{- define "yeti.initContainer" -}}
@@ -15,6 +15,12 @@ the Yeti Pods.
       # Wait for ArangoDB
       until nslookup {{ .Release.Name }}-yeti-arangodb; do echo waiting for ArangoDB; sleep 30; done
       echo "ArangoDB service is discoverable."
+      {{- if .Values.chromadb.enabled }}
+
+      # Wait for ChromaDB
+      until nslookup {{ .Release.Name }}-yeti-chromadb; do echo waiting for ChromaDB; sleep 30; done
+      echo "ChromaDB service is discoverable."
+      {{- end }}
 {{- end }}
 
 {{/*
