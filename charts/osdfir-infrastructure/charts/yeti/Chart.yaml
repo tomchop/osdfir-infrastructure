@@ -16,7 +16,7 @@ maintainers:
 sources:
 - https://github.com/yeti-platform/yeti
 - https://github.com/google/osdfir-infrastructure
-appVersion: "2.9.0"
+appVersion: "2.12.0"
 annotations:
   category: Security
   licenses: Apache-2.0

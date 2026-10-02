@@ -43,7 +43,7 @@ frontend:
     repository: yetiplatform/yeti-frontend
     ## @param frontend.image.tag Overrides the image tag whose default is the chart appVersion
     ##
-    tag: 2.9.0
+    tag: 2.12.0
   ## Yeti frontend resource requests and limits
   ## ref: https://kubernetes.io/docs/user-guide/compute-resources/
   ## @param frontend.resources.limits Resource limits for the frontend container
@@ -71,7 +71,7 @@ api:
     repository: yetiplatform/yeti
     ## @param api.image.tag Overrides the image tag whose default is the chart appVersion
     ##
-    tag: 2.9.0
+    tag: 2.12.0
   ## Yeti api resource requests and limits
   ## ref: https://kubernetes.io/docs/user-guide/compute-resources/
   ## @param api.resources.limits Resource limits for the API container
